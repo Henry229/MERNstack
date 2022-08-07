@@ -42,7 +42,7 @@ function App() {
   }
 
   const deleteFriend = (id) => {
-    Axios.delete(`https://mernstack-boilerplate01.herokuapp.com/${id}`).then(
+    Axios.delete(`https://mernstack-boilerplate01.herokuapp.com/delete/${id}`).then(
       () => {
         setListOfFriends(
           listOfFriends.filter((val) => {
