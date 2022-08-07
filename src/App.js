@@ -8,7 +8,7 @@ function App() {
   const [listOfFriends, setListOfFriends] = useState([]);
   
   const addFriend = () => {
-    Axios.post('http://localhost:3001/addFriend', {
+    Axios.post('https://mernstack-boilerplate01.herokuapp.com/addFriend', {
       name, age
       }
     ).then((response) => {
@@ -26,7 +26,7 @@ function App() {
   const updateFriend = (id) => {
     const newAge = prompt("Enter new Age : ")
     console.log('===> newAge : ', newAge);
-    Axios.put('http://localhost:3001/update', {
+    Axios.put('https://mernstack-boilerplate01.herokuapp.com/update', {
       newAge: newAge,
       id: id,
     })
@@ -42,7 +42,7 @@ function App() {
   }
 
   const deleteFriend = (id) => {
-    Axios.delete(`http://localhost:3001/delete/${id}`).then(
+    Axios.delete(`https://mernstack-boilerplate01.herokuapp.com/${id}`).then(
       () => {
         setListOfFriends(
           listOfFriends.filter((val) => {
@@ -54,7 +54,7 @@ function App() {
   };
 
   useEffect(() => {
-    Axios.get('http://localhost:3001/read')
+    Axios.get('https://mernstack-boilerplate01.herokuapp.com/read')
       .then((response) => {
         setListOfFriends(() => { return response.data });
       })
